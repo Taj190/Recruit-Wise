@@ -36,7 +36,7 @@ app.use(cors(corsOptions));
 const __dirname = path.resolve();
 
 // Serve static files for the client
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.use(express.static(path.join(__dirname, './client/dist')));
 
 // Serve static files for the admin panel
 app.use('/admin', express.static(path.join(__dirname, 'admin', 'dist')));
@@ -48,7 +48,7 @@ app.get('/admin/*', (req, res) => {
 
 // Serve the index.html file for the client for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, './client/dist/index.html'));
 });
 
 // Define API routes
