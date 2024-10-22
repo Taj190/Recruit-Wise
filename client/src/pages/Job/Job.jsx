@@ -4,7 +4,8 @@ import { toast } from 'react-toastify';
 import './job.css'
 import { Link } from 'react-router-dom';
 import JobApplicationForm from '../../component/JobApplication/JobApplicationForm';
-import Pagination from '../../../../admin/src/component/Pagination/Pagination';
+import Pagination from '../../component/pagination/Pagination';
+
 const Job = () => {
   const [category , setCategory] = useState([])
   const [selectedCategory , setSelectedCategory] = useState()

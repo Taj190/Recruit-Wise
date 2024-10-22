@@ -1,0 +1,19 @@
+/* Pagination.css */
+
+.pagination-container {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pagination-info {
+    font-weight: 600;
+    color: #343a40; /* Dark gray text */
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
