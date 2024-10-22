@@ -1,0 +1,36 @@
+.candidate-details-section {
+    padding: 50px 20px;
+    background-color: rgba(33, 147, 176, 0.9); /* Semi-transparent background */
+  }
+  
+  .candidate-details-section .heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Increased heading size */
+    color: white; /* White text color */
+  }
+  
+  .candidate-details-section .info-text {
+    font-size: 1.2rem; /* Increased info text size */
+    color: white; /* White text color */
+    margin-bottom: 20px;
+  }
+  
+  .candidate-details-section .row {
+    margin: 0 auto;
+  }
+  
+  .candidate-details-section .ant-form-item {
+    margin-bottom: 20px;
+    font-size: 1.1rem; /* Increased font size for form fields */
+  }
+  
+  .ant-input, .ant-radio-wrapper {
+    border-radius: 10px; /* Rounded corners for inputs */
+  }
+  
+  .ant-btn {
+    border-radius: 10px; /* Rounded corners for buttons */
+  }
+  
+  

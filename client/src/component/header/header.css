@@ -1,0 +1,117 @@
+/* Header.css */
+.recruit{
+    color:#f0f4f0;
+    font-size: 40px;
+    margin-left: 2px;
+}
+.wise{
+    color:#d6e108;
+    font-size: 40px;
+    margin-left: 2px;
+}
+.navbar {
+    background: linear-gradient(135deg, rgba(0, 204, 255, 0.995), rgba(130, 215, 208, 0.5), rgba(32, 32, 173, 0.5)); /* Adjusted alpha for transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    height: 50px; /* Adjust the height of the logo */
+    width: auto;  /* Keep the aspect ratio */
+    max-width: 200px; /* Ensure it doesn't stretch too much */
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    padding: 0.5rem;
+}
+
+/* Make the logo round, apply animation and size */
+.logo {
+    width: 70px; /* Adjust size as needed */
+    height: 70px;
+    border-radius: 50%; /* Makes the image round */
+    animation: logoAnimation 3s infinite ease-in-out; /* Infinite animation */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+/* Simple pulse color effect with size animation */
+@keyframes logoAnimation {
+    0% {
+        transform: rotation(360);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        transform: scale(1);
+        filter: hue-rotate(180deg); /* Color change midway */
+    }
+    100% {
+        transform: scale(1);
+        filter: hue-rotate(360deg); /* Complete the hue rotation */
+    }
+}
+
+/* On hover, the logo scales up a bit */
+.logo:hover {
+    transform: scale(1.15);
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Adjust navbar links for better visibility */
+.navbar-nav .nav-link {
+    color: #fff;
+    padding-right: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8d800; /* Highlight color on hover */
+}
+
+/* Sticky positioning */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Ensures it stays on top */
+}
+
+/* Mobile menu animation */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center;
+        padding-top: 10px;
+        animation: slideIn 0.5s ease-in-out forwards; /* Apply slide-in animation */
+    }
+    .navbar {
+        width:100vw ;
+     
+
+    }
+    .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+}
+
+/* Slide-in animation for mobile view */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

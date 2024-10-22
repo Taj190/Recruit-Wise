@@ -1,0 +1,88 @@
+.about-section {
+    padding: 50px 20px;
+    background-color: #714d86;
+    width:96.56vw ;
+    height:auto;
+    margin-bottom: 5px;
+  }
+  
+  .about-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: beige;
+  }
+  
+  .about-text {
+    font-size: 30px; 
+    color: antiquewhite;
+  }
+  
+  .why-us {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .why-us h2 {
+    margin-bottom: 20px;
+  }
+  
+  .icon-text {
+    text-align: center; 
+    color: bisque;
+  }
+  
+  .big-icon {
+    font-size: 68px; 
+    color: #2196F3;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .sub-text {
+    font-size: 14px; 
+    color: #ece4e4;
+  }
+  
+  .why-us p {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .about-section {
+        padding: 50px 20px;
+        background-color: #714d86;
+        width:92.70vw ;
+        height:auto;
+        margin-bottom: 5px;
+      }
+  
+    .about-title {
+      font-size: 28px;
+    }
+  
+    .about-text {
+      font-size: 18px;
+    }
+  
+    .why-us {
+      margin-top: 30px;
+    }
+  
+    .why-us h2 {
+      font-size: 24px;
+    }
+  
+    .icon-text {
+      margin-bottom: 20px; /* Space below each icon block */
+    }
+  
+    .big-icon {
+      font-size: 40px;
+    }
+  
+    .why-us p {
+      font-size: 16px;
+    }
+  }
+  

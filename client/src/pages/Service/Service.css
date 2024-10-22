@@ -1,0 +1,72 @@
+/* FeaturedServices.css */
+
+.featured-services {
+    background-color: #28a745; /* Green background for the section */
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .services-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .services-subtitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+  }
+  
+  .service-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px; /* Increased padding for larger cards */
+    width: 300px; /* Set a fixed width for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  .center {
+    transform: translateY(-10px); /* Elevate the center card */
+  }
+  
+  .first, .third {
+    transform: translateY(0); /* Keep left and right cards at the base level */
+  }
+  
+  .service-icon {
+    font-size: 50px; /* Adjusted icon size for larger cards */
+    color: #28a745; /* Full color for the icons */
+    margin-bottom: 15px;
+  }
+  
+
+  @media (max-width: 768px) {
+    .services-container {
+      flex-direction: column !important ; /* Stack cards vertically */
+      padding: 20px;
+      align-items: center;
+    }
+  
+    .service-card {
+     gap: 10px !important;
+    
+    }
+    .first-card {
+    margin-bottom: 50px !important;
+    }
+  
+   
+  }

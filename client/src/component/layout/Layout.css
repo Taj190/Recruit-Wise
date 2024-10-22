@@ -1,0 +1,23 @@
+/* Overall layout styling */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for content */
+  }
+  
+  /* Ensure header and footer remain positioned appropriately */
+  .header,
+  .footer {
+    z-index: 1000;
+  }
+  
+  .footer {
+    margin-top: auto;
+  }
+  

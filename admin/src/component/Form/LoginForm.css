@@ -1,0 +1,68 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    width: 100vw; /* Full width */
+    background: rgba(33, 147, 176, 0.75); /* Transparent background */
+    position: relative; /* To allow absolute positioning of child elements */
+  }
+  
+  .login-form {
+    background: white; /* Background of the form */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    animation: fadeIn 0.5s; /* Animation for the form */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Space between form fields */
+    display: flex;
+    flex-direction: column; /* Align label and input vertically */
+  }
+  
+  .form-group label {
+    margin-bottom: 5px; /* Space between label and input */
+  }
+  
+  .form-control {
+    padding: 10px; /* Padding for input fields */
+    border: 1px solid #ced4da; /* Default border color */
+    border-radius: 5px; /* Rounded corners for input fields */
+  }
+  
+  /* Responsive adjustment */
+  @media (max-width: 768px) {
+    .login-form {
+      width: 95%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  /* Animation for the form */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  

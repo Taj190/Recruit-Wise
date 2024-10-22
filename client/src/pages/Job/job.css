@@ -1,0 +1,54 @@
+/* Main container background */
+.main-container {
+    background-color: #f5f7fa; /* Light background color for the entire container */
+  }
+  .search-input::placeholder {
+    color: rgb(205, 196, 196); /* Light gray placeholder text for better visibility on a black background */
+  }
+  /* Filter Sidebar */
+  .filter-sidebar {
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  /* Sticky Sidebar for both desktop and mobile */
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Job Cards Styling */
+  .job-card {
+    background-color: #c2d74c; /* Light background color for the job cards */
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .job-title {
+    color: #2c3e50;
+  }
+  
+  .job-description {
+    font-size: 0.9rem;
+    color: #5c7286;
+  }
+  
+  /* Mobile view adjustments */
+  @media (max-width: 767px) {
+    .filter-sidebar {
+      position: sticky !important;
+      top: 0;
+      z-index: 1050; /* Make sure it stays above other content */
+      margin-bottom: 1rem;
+    }
+  
+    .job-card {
+      margin: 0 auto; /* Center the job cards on mobile */
+    }
+  }
+  

@@ -1,0 +1,55 @@
+/* Flexbox container for sidebar and dashboard content */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Ensures content doesn't overflow the viewport */
+  }
+  
+  /* Sidebar already has width set to 250px, no changes needed */
+  .sidebar {
+    width: 250px;
+    height: 100vh; /* Ensure it takes full viewport height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Existing sidebar styles remain unchanged */
+  }
+  
+  /* Dashboard content takes the remaining space */
+  .dashboard-content {
+    flex-grow: 1; /* Allows the content to take the remaining space */
+    margin-left: 250px; /* Offset by the sidebar's width */
+    padding: 2rem;
+    background-color: #57585c; /* Light background to contrast the sidebar */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    min-height: 100vh;
+  }
+  
+  /* Styling for content inside the dashboard */
+  .dashboard-content h1 {
+    color: #007bff;
+    font-size: 2rem;
+  }
+  
+  
+  .dashboard-content p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column; /* Stack sidebar and content vertically */
+    }
+    
+    .dashboard-content {
+      margin-left: 0; /* Remove the offset */
+      width: 100%; /* Take full width */
+      padding: 1.2rem; /* Smaller padding on mobile */
+      text-align: center;
+    }
+  }
+  
+  

@@ -1,0 +1,61 @@
+/* src/pages/Home.css */
+.home-section {
+  padding: 100px 20px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.text-column {
+  background-color: rgba(33, 147, 176, 0.75); /* Text background color */
+  color: white;
+  padding: 30px;
+  border-radius: 10px; /* Optional: adds rounded corners */
+  text-align: center;
+  animation: fadeIn 2s ease-in-out forwards;
+
+}
+
+/* Styling for the h1 text */
+.animated-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Animation for the text */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 768px) {
+  .home-section {
+      flex-direction: column;
+      height: auto;
+      padding: 50px 10px;
+  }
+
+  .text-column {
+      margin-top: 20px;
+  }
+
+  .animated-text {
+      font-size: 1.8rem;
+  }
+  
+  img {
+      width: 100%;
+      height: auto;
+  }
+}
+

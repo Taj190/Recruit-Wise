@@ -1,0 +1,53 @@
+/* FormStyles.css */
+
+.form-section {
+    background: rgba(0, 123, 255, 0.05); /* Light blue background */
+    padding: 40px 0;
+    width: 96.5vw;
+    margin-top: 5px; /* Use 98% of viewport width */
+  }
+  
+  .form-container {
+    background: rgba(0, 123, 255, 0.2); /* Semi-transparent blue background */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0056b3; /* Darker blue color */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .text-container {
+    background: rgba(0, 123, 255, 0.1); /* Light background for the text area */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .encouraging-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003366; /* Darker blue for text */
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .form-section {
+      padding: 20px;
+    }
+  
+    .form-container, .text-container {
+      margin-bottom: 20px; /* Space between containers on small screens */
+    }
+  
+    .encouraging-text, .form-heading {
+      font-size: 1.2rem;
+    }
+  }
+  

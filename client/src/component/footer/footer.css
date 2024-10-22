@@ -1,0 +1,120 @@
+.footer {
+  background-color: #003d4d; /* Footer background color */
+  color: white;
+  padding: 20px 10px; /* Adjusted padding */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the start */
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer-logo-image {
+  width: 100px; /* Adjust logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column; /* Set contact info vertically */
+}
+
+.contact p {
+  margin: 5px 0;
+  font-size: 1.2rem; /* Increased font size for contact info */
+}
+
+.contact a {
+  color: white; /* Color for email link */
+}
+
+.service-section {
+  flex: 1;
+}
+
+.service-list {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+}
+
+.service-list li {
+  font-size: 1.2rem; /* Font size for service list */
+  margin: 5px 0; /* Spacing between services */
+}
+
+.map-container {
+  flex: 1;
+  text-align: right; /* Align text to the right */
+}
+.map-container > h3{
+  text-align: center;
+  font-size: 40px;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 400px; /* Reduced max width of the map */
+  height: 300px; /* Set height for the map */
+  margin: 0 auto; /* Center the map */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-bottom p {
+  font-size: 1.2rem; /* Increased font size for footer bottom text */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px; /* Reduced margin between links */
+}
+
+.footer-links a {
+  color: white; /* Link color */
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .footer-info,
+  .service-section,
+  .map-container {
+    margin: 10px 0; /* Add margin for spacing */
+    width: 100%; /* Make sections take full width */
+  }
+
+  .map-wrapper {
+    width: 100%; /* Make map responsive */
+    height: 200px; /* Adjust height for mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
