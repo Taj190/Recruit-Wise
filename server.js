@@ -31,6 +31,7 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+
 // Function to get the directory name
 const __dirname = path.resolve();
 
