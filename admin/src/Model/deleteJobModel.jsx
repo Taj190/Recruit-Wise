@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import PropTypes from "prop-types"; // Import PropTypes
+
 
 // Delete Job Model Component
 export const DeleteJobModel = ({ id, model, onDeleteSuccess }) => {
@@ -98,8 +98,4 @@ export const DeleteJobApplication = ({ id, model, onDeleteSuccess }) => {
 };
 
 // Prop validation for DeleteJobApplication
-DeleteJobApplication.propTypes = {
-  id: PropTypes.string.isRequired, // Assuming id is a string; adjust if needed
-  model: PropTypes.bool.isRequired,
-  onDeleteSuccess: PropTypes.func.isRequired,
-};
+

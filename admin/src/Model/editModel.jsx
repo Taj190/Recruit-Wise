@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRef } from "react";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types"; // Import PropTypes
+
 import './deleteModel.css';
 
 const EditUser = ({ editModel, id, name, email, address, phone, taxNumber, onEditSuccess }) => {
@@ -114,15 +114,6 @@ const EditUser = ({ editModel, id, name, email, address, phone, taxNumber, onEdi
 };
 
 // Define prop types
-EditUser.propTypes = {
-  editModel: PropTypes.bool.isRequired, // editModel must be a boolean and is required
-  id: PropTypes.string.isRequired,       // id must be a string and is required
-  name: PropTypes.string.isRequired,     // name must be a string and is required
-  email: PropTypes.string.isRequired,    // email must be a string and is required
-  address: PropTypes.string.isRequired,  // address must be a string and is required
-  phone: PropTypes.string.isRequired,    // phone must be a string and is required
-  taxNumber: PropTypes.string.isRequired, // taxNumber must be a string and is required
-  onEditSuccess: PropTypes.func.isRequired, // onEditSuccess must be a function and is required
-};
+
 
 export default EditUser;

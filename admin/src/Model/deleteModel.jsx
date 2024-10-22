@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types"; // Import PropTypes
+
 import './deleteModel.css';
 
 const DeleteUser = ({ deleteModel, id, onDeleteSuccess }) => {
@@ -42,10 +42,6 @@ const DeleteUser = ({ deleteModel, id, onDeleteSuccess }) => {
 };
 
 // Define PropTypes
-DeleteUser.propTypes = {
-  deleteModel: PropTypes.bool.isRequired, // deleteModel should be a boolean
-  id: PropTypes.string.isRequired,         // id should be a string
-  onDeleteSuccess: PropTypes.func.isRequired, // onDeleteSuccess should be a function
-};
+
 
 export default DeleteUser;
