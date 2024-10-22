@@ -47,11 +47,7 @@ export const DeleteJobModel = ({ id, model, onDeleteSuccess }) => {
 };
 
 // Prop validation for DeleteJobModel
-DeleteJobModel.propTypes = {
-  id: PropTypes.string.isRequired, // Assuming id is a string; adjust if needed
-  model: PropTypes.bool.isRequired,
-  onDeleteSuccess: PropTypes.func.isRequired,
-};
+
 
 // Delete Job Application Component
 export const DeleteJobApplication = ({ id, model, onDeleteSuccess }) => {
