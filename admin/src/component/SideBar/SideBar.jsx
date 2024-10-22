@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Sidebar.css';
+import './SideBar.css';
 import Logout from '../logout/Logout'
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
