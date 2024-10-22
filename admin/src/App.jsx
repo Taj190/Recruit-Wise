@@ -14,6 +14,7 @@ import JobListing from './pages/AllJobs';
 import AddCategories from './pages/AddCategories';
 import AllCategories from './pages/AllCategories';
 import JobApplications from './pages/JobApplications';
+import NotFound from './component/NotFound/NotFound';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const App = () => {
           <Route path="job-application" element={<JobApplications />} /> {/* AddJob content */}
         </Route>
       </Route>
-        
+      <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
       </Routes>
     </PersistGate>
   );
