@@ -31,13 +31,24 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+// Function to get the directory name
+const __dirname = path.resolve();
 
-// Serve static files for CV uploads
-app.use('/filefolder', express.static('filefolder'));
+// Serve static files for the client
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-// Serve static files from the client and admin build directories
-app.use(express.static(path.join(__dirname, 'client', 'dist'))); // Client build
-app.use(express.static(path.join(__dirname, 'admin', 'dist'))); // Admin build
+// Serve static files for the admin panel
+app.use('/admin', express.static(path.join(__dirname, 'admin', 'dist')));
+
+// Serve the index.html file for the admin panel
+app.get('/admin/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin', 'dist', 'index.html'));
+});
+
+// Serve the index.html file for the client for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 // Define API routes
 app.use('/auth', authentication);
@@ -47,19 +58,6 @@ app.use('/job-listing', createJob);
 app.use('/job-category', createCategory);
 app.use('/job-apply', jobApplication);
 app.use('/employer', employerRequest);
-
-// Fallback route for serving the index.html for React Router
-app.get('*', (req, res) => {
-  const clientPath = path.join(__dirname, 'client', 'dist', 'index.html');
-  const adminPath = path.join(__dirname, 'admin', 'dist', 'index.html');
-
-  // Serve index.html based on the request URL
-  if (req.path.startsWith('/admin')) {
-    res.sendFile(adminPath); // Serve admin index.html for admin routes
-  } else {
-    res.sendFile(clientPath); // Serve client index.html for other routes
-  }
-});
 
 // Start the server on the specified port
 const PORT = process.env.PORT || 5000; 
