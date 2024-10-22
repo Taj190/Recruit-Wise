@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'; // Import PropTypes
+
 import './Pagination.css'; // Import your custom CSS file
 
 const Pagination = ({ currentPage, totalPage, setCurrentPage }) => {
@@ -38,11 +38,7 @@ const Pagination = ({ currentPage, totalPage, setCurrentPage }) => {
 };
 
 // Define prop types
-Pagination.propTypes = {
-  currentPage: PropTypes.number.isRequired, // currentPage must be a number and is required
-  totalPage: PropTypes.number.isRequired,   // totalPage must be a number and is required
-  setCurrentPage: PropTypes.func.isRequired, // setCurrentPage must be a function and is required
-};
+
 
 export default Pagination;
 
