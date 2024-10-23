@@ -22,7 +22,7 @@ const App = () => {
 
   // Helper function to check for token in cookies
   const tokenExists = () => {
-    const token = Cookies.get('token'); // Assuming the token is saved in a cookie named 'token'
+    const token = Cookies.get('token'); 
     return token ? true : false;
   };
 
