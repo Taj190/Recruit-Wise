@@ -6,6 +6,7 @@ import path from 'path';
 
 // Controller to handle job application submission
 export const jobApplicationController = async (req, res) => {
+   
     try {
         const { category, taxNumber, name, email, phoneNumber, address } = req.body;
         const cv = req.file; // Access the uploaded file
@@ -52,8 +53,7 @@ export const jobApplicationController = async (req, res) => {
             address,
             cvFilePath: req.file.filename, // Save the file path to the database
         });
-        console.log(`CV file saved at: ${req.file.path}`);
-        console.log(`CV file saved at: ${req.file.name}`);
+        
 
         // Save the new job application
         await newJobApplication.save();
