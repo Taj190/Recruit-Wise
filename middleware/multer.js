@@ -4,7 +4,8 @@ import path from 'path';
 // Set storage options for Multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './filefolder'); // Path to store CVs
+        const uploadPath = process.env.CV_UPLOAD_PATH || './filefolder'; // Use the environment variable
+        cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
