@@ -14,14 +14,13 @@ export const verifyToken = (req, res, next) => {
   });
 };
 export const isLoggedIn = async(req, res ,next)=>{
-  console.log('Incoming Cookies:', req.cookies);
-  console.log('checking' , req.cookies.token)
+  
     try {
         if(!req.cookies.token){
             throw new Error("Not authenticated")
         }
         const token = req.cookies.token
-        console.log('checking' , token)
+        
         const data =  jwt.verify(token, process.env.JWT_SECRET_KEY)
         req.user = data
         next()

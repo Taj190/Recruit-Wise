@@ -10,7 +10,7 @@ import { createJob } from './route/jobPost.js';
 import { createCategory } from './route/category.js';
 import { jobApplication } from './route/jobApplicationRoute.js';
 import { employerRequest } from './route/employerRoute.js';
-
+import path from 'path'
 // Load environment variables from .env file
 dotenv.config();
 
@@ -30,7 +30,8 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-
+// To get cv 
+app.use('/filefolder', express.static(path.join(process.cwd(), 'filefolder')));
 // Define API routes
 app.use('/auth', authentication);
 app.use('/form-submission', uploadData);
