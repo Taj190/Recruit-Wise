@@ -2,6 +2,16 @@ import jwt from 'jsonwebtoken'
 import adminSchema from '../schema/adminSchema.js'
 import sanitizeHtml from 'sanitize-html';
 
+export const verifyToken = (req, res, next) => {
+  const token = req.cookies.token; // Access token from cookies
+  if (!token) return res.status(403).send({ error: "No token provided" });
+
+  jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
+      if (err) return res.status(403).send({ error: "Failed to authenticate token" });
+      req.user = { id: decoded.id }; // Store user ID in request
+      next();
+  });
+};
 export const isLoggedIn = async(req, res ,next)=>{
     
     
