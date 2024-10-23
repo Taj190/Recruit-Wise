@@ -4,6 +4,7 @@ import sanitizeHtml from 'sanitize-html';
 
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.token; // Access token from cookies
+  console.log("Token from cookie:", token);
   if (!token) return res.status(403).send({ error: "No token provided" });
 
   jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
