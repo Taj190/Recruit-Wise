@@ -9,41 +9,40 @@ export const jobApplicationController = async (req, res) => {
     try {
         const { category, taxNumber, name, email, phoneNumber, address } = req.body;
         const cv = req.file; // Access the uploaded file
+        
+        // Check if CV file is provided
         if (!cv) {
             return res.status(400).json({ message: 'CV file is required.' });
         }
-        try {
-            if(!taxNumber || !name || !email || !phoneNumber|| !address ||(taxNumber.length < 9 ||taxNumber.length >9)){
-                return res.status(400).send({
-                    message:'invaild inputs has been added please check your data'
-                })
-            }
-            
-            const existingApplicant = await JobApplication.findOne({
-                $or: [{ taxNumber: taxNumber }, { email: email }]
-              });
-              
-              if (existingApplicant) {
-                if (existingApplicant.taxNumber === taxNumber) {
-                  throw new Error("Your application has already been applied. Please wait for a response.");
-                }
-                if (existingApplicant.email === email) {
-                  throw new Error("An application with this email already exists. Please use a different email.");
-                }
-              }
-              
-        } catch (error) {
-            
-            console.error(error);
-            res.status(500).json({ message: 'An error occurred while submitting the data.', error });
+        
+        // Validate input fields
+        if (!taxNumber || !name || !email || !phoneNumber || !address || (taxNumber.length !== 9)) {
+            return res.status(400).send({
+                message: 'Invalid inputs. Please check your data.'
+            });
         }
         
+        // Check for existing applicants
+        const existingApplicant = await JobApplication.findOne({
+            $or: [{ taxNumber: taxNumber }, { email: email }]
+        });
+        
+        if (existingApplicant) {
+            if (existingApplicant.taxNumber === taxNumber) {
+                return res.status(400).json({ message: "Your application has already been applied. Please wait for a response." });
+            }
+            if (existingApplicant.email === email) {
+                return res.status(400).json({ message: "An application with this email already exists. Please use a different email." });
+            }
+        }
+
         // Check if the category exists by name
         const existingCategory = await Category.findOne({ name: category });
-        
         if (!existingCategory) {
             return res.status(400).json({ message: 'Invalid job category.' });
         }
+
+        // Create a new job application
         const newJobApplication = new JobApplication({
             category: existingCategory._id, // Use the ID of the found category
             taxNumber,
@@ -53,14 +52,17 @@ export const jobApplicationController = async (req, res) => {
             address,
             cvFilePath: req.file.path, // Save the file path to the database
         });
-           
+
+        // Save the new job application
         await newJobApplication.save();
         res.status(201).json({ message: 'Job application submitted successfully!' });
     } catch (error) {
         console.error('Error submitting job application:', error);
-        res.status(500).json({ message: 'An error occurred while submitting the application.' });
+        res.status(500).json({ message: 'An error occurred while submitting the application.', error });
     }
 };
+
+
 export const getApplicationsController = async (req, res)=>{
     const {page  , limit = 10 , category, name} =req.query
 
