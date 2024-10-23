@@ -4,7 +4,10 @@ import path from 'path';
 // Set storage options for Multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        const uploadPath = process.env.CV_UPLOAD_PATH || './filefolder'; // Use the environment variable
+        const uploadPath = process.env.CV_UPLOAD_PATH || './filefolder'; 
+        if (!fs.existsSync(uploadPath)) {
+            fs.mkdirSync(uploadPath, { recursive: true });
+        }
         cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
