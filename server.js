@@ -10,7 +10,6 @@ import { createJob } from './route/jobPost.js';
 import { createCategory } from './route/category.js';
 import { jobApplication } from './route/jobApplicationRoute.js';
 import { employerRequest } from './route/employerRoute.js';
-import path from 'path'; // Import path for serving static files
 
 // Load environment variables from .env file
 dotenv.config();
@@ -25,34 +24,12 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Enable CORS for client and admin frontends
+// Enable CORS for client and admin frontends hosted on Vercel
 const corsOptions = {
-  origin: ['https://recruit-wise.vercel.app', 'https://recruit-wise-admin.vercel.app'], // Update this for production domains
+  origin: ['https://recruit-wise.vercel.app', 'https://recruit-wise-admin.vercel.app'], // Your Vercel frontend URLs
   credentials: true,
 };
 app.use(cors(corsOptions));
-
-// Function to get the directory name
-const __dirname = path.resolve();
-
-// Serve static files for the client
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
-
-// Serve static files for the admin panel
-
-app.use('/admin', express.static(path.join(__dirname, 'admin', 'dist')));
-
-// Serve the index.html file for the admin panel
-app.get('/admin/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'admin', 'dist', 'index.html'));
-});
-
-// Serve the index.html file for the client for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
-console.log(__dirname);
-
 
 // Define API routes
 app.use('/auth', authentication);
