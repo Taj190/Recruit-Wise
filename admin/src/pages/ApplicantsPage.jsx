@@ -102,15 +102,16 @@ const ApplicationsPage = () => {
                   )}
                 </td>
                 <td data-label="CV">
-                  <a
-                    href={`${import.meta.env.VITE_API_URL}/filefolder/${applicant.cvFilePath.split('\\').pop()}`}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary btn-sm"
-                  >
-                    Download CV
-                  </a>
+                <a
+  href={`${import.meta.env.VITE_API_URL}/filefolder/${applicant.cvFilePath.split(/[/\\]/).pop()}`}
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-primary btn-sm"
+>
+  Download CV
+</a>
+
                 </td>
                 <td data-label="Actions">
                   <button
