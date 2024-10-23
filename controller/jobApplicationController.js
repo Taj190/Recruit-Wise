@@ -41,7 +41,7 @@ export const jobApplicationController = async (req, res) => {
         if (!existingCategory) {
             return res.status(400).json({ message: 'Invalid job category.' });
         }
-        
+
         const uploadPath = process.env.CV_UPLOAD_PATH || './filefolder'; // Fallback if not set
         if (!fs.existsSync(uploadPath)) {
             fs.mkdirSync(uploadPath, { recursive: true }); // Create directory if it doesn't exist
@@ -57,6 +57,7 @@ export const jobApplicationController = async (req, res) => {
             address,
             cvFilePath: req.file.path, // Save the file path to the database
         });
+        console.log(`CV file saved at: ${req.file.path}`);
 
         // Save the new job application
         await newJobApplication.save();
