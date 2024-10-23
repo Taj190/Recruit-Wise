@@ -55,7 +55,7 @@ export const jobApplicationController = async (req, res) => {
             email,
             phoneNumber,
             address,
-            cvFilePath: req.file.path, // Save the file path to the database
+            cvFilePath: req.file.filename, // Save the file path to the database
         });
         console.log(`CV file saved at: ${req.file.path}`);
 

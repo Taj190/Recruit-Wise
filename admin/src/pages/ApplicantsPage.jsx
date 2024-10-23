@@ -103,7 +103,7 @@ const ApplicationsPage = () => {
                 </td>
                 <td data-label="CV">
                 <a
-  href={`${import.meta.env.VITE_API_URL}/filefolder/${applicant.cvFilePath.split(/[/\\]/).pop()}`}
+  href={`${import.meta.env.VITE_API_URL}/filefolder/${applicant.cvFilePath}`} // This will use the filename correctly
   download
   target="_blank"
   rel="noopener noreferrer"
