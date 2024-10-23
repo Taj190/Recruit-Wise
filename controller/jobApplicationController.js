@@ -42,11 +42,6 @@ export const jobApplicationController = async (req, res) => {
             return res.status(400).json({ message: 'Invalid job category.' });
         }
 
-        const uploadPath = process.env.CV_UPLOAD_PATH || './filefolder'; // Fallback if not set
-        if (!fs.existsSync(uploadPath)) {
-            fs.mkdirSync(uploadPath, { recursive: true }); // Create directory if it doesn't exist
-        }
-
         // Create a new job application
         const newJobApplication = new JobApplication({
             category: existingCategory._id, // Use the ID of the found category
@@ -115,7 +110,7 @@ export const getApplicationsController = async (req, res)=>{
     }
 }
 
-export const deleteApplicationsController = async( req, res)=>{
+export const deleteApplicationsController = async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -127,19 +122,26 @@ export const deleteApplicationsController = async( req, res)=>{
                 message: "User not found",
             });
         }
+        
+        // Use the cvFilePath directly
         const cvFilePath = applicant.cvFilePath; 
-        const fullPath = path.join(process.cwd(), cvFilePath); 
+
+        // Log the CV file path for debugging
+        console.log(`CV file path to delete: ${cvFilePath}`);
+
         await JobApplication.findByIdAndDelete(id);
-        if (fs.existsSync(fullPath)) { // Check if the file exists
-            fs.unlink(fullPath, (err) => {
+
+        // Check if the file exists
+        if (fs.existsSync(cvFilePath)) {
+            fs.unlink(cvFilePath, (err) => {
                 if (err) {
-                    console.error(`Failed to delete file: ${fullPath}`, err);
+                    console.error(`Failed to delete file: ${cvFilePath}`, err);
                 } else {
-                    console.log(`Successfully deleted file: ${fullPath}`);
+                    console.log(`Successfully deleted file: ${cvFilePath}`);
                 }
             });
         } else {
-            console.log(`File does not exist: ${fullPath}`);
+            console.log(`File does not exist: ${cvFilePath}`);
         }
 
         res.send({
@@ -155,3 +157,4 @@ export const deleteApplicationsController = async( req, res)=>{
         });
     }
 }
+
