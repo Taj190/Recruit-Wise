@@ -26,7 +26,7 @@ app.use(cookieParser());
 
 // Enable CORS for client and admin frontends hosted on Vercel
 const corsOptions = {
-  origin: ['https://recruit-wise.vercel.app', 'https://recruit-wise-admin.vercel.app'], // Your Vercel frontend URLs
+  origin: ['https://recruitwise.pt', 'https://recruit-wise-admin.vercel.app'], // Your Vercel frontend URLs
   credentials: true,
 };
 app.use(cors(corsOptions));
