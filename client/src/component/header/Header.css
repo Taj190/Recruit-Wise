@@ -9,7 +9,7 @@
     margin-left: 2px;
 }
 .navbar {
-    background: linear-gradient(135deg, rgba(0, 204, 255, 0.995), rgba(130, 215, 208, 0.5), rgba(32, 32, 173, 0.5)); /* Adjusted alpha for transparency */
+    background: linear-gradient(135deg, rgba(13, 13, 16, 0.995), rgba(0, 0, 0, 0.701), rgba(14, 15, 20, 0.603)); /* Adjusted alpha for transparency */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
     padding: 1rem 2rem;

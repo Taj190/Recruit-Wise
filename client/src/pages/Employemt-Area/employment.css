@@ -1,6 +1,7 @@
 .employment-section {
     padding: 50px 20px;
     text-align: center;
+   
   }
   
   .employment-heading {
@@ -8,6 +9,7 @@
     margin-bottom: 40px;
     background-color: rgba(33, 147, 176, 0.75); /* Card background */
     color: white;
+    border-radius: 12px;
   }
   
   .employment-card {

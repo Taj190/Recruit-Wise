@@ -1,6 +1,7 @@
 .candidate-details-section {
     padding: 50px 20px;
-    background-color: rgba(33, 147, 176, 0.9); /* Semi-transparent background */
+    background-color: rgba(33, 147, 176, 0.9);
+    border-radius: 20px;
   }
   
   .candidate-details-section .heading {
