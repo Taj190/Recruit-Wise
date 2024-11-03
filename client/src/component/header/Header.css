@@ -8,9 +8,13 @@
     font-size: 40px;
     margin-left: 2px;
 }
+.nav-link{
+    font-size: 24px;
+    font-style: italic;
+}
 .navbar {
-    background: linear-gradient(135deg, rgba(13, 13, 16, 0.995), rgba(0, 0, 0, 0.701), rgba(14, 15, 20, 0.603)); /* Adjusted alpha for transparency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(13, 13, 16, 0.995), rgba(49, 45, 45, 0.701), rgba(3, 77, 151, 0.842)); /* Adjusted alpha for transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.448);
     
     padding: 1rem 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
